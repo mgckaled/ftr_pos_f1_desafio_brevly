@@ -1,0 +1,19 @@
+# personal files
+notes.md
+
+## env files
+.env
+*/.env
+*.env.local
+
+*/node_modules
+*.log
+temp/
+.DS_Store
+.vscode/
+dist/
+*/dist/
+*/build/
+*/coverage/
+npm-debug.log*
+
