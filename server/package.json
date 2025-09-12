@@ -1,0 +1,48 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "biome:all": "pnpm exec biome check ./src --write",
+    "dev": "tsx --env-file .env src/server.ts",
+    "dev:watch": "tsx watch --env-file .env src/server.ts"
+  },
+  "keywords": [
+    "ftr",
+    "pós-graduação",
+    "rocketseat",
+    "brevly"
+  ],
+  "author": {
+    "name": "Marcel Kaled",
+    "url": "https://github.com/mgckaled/"
+  },
+  "license": "MIT",
+  "packageManager": "pnpm@10.16.0",
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.4",
+    "@types/node": "^24.3.1",
+    "drizzle-kit": "^0.31.4",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.1.0",
+    "@fastify/multipart": "^9.2.1",
+    "@fastify/swagger": "^9.5.1",
+    "@fastify/swagger-ui": "^5.2.3",
+    "dotenv": "^17.2.2",
+    "drizzle-orm": "^0.44.5",
+    "fastify": "^5.6.0",
+    "fastify-type-provider-zod": "^6.0.0",
+    "postgres": "^3.4.7",
+    "vite": "^7.1.5",
+    "zod": "^4.1.8"
+  }
+}
+
+
+
