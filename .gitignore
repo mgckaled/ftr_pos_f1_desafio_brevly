@@ -6,14 +6,28 @@ notes.md
 */.env
 *.env.local
 
-*/node_modules
-*.log
-temp/
+## IDEs and editors
+.idea/
 .DS_Store
 .vscode/
+
+# dependencies
+node_modules/
+*/node_modules
+
+# build outputs
 dist/
-*/dist/
 */build/
-*/coverage/
+*/dist/
+dist/
+
+# temporary files and
+*.tmp
+*.log
+temp/
 npm-debug.log*
+
+# workspace files
+*/coverage/
+*.code-workspace
 

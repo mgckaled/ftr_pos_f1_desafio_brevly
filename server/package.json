@@ -5,9 +5,11 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "biome:all": "pnpm exec biome check ./src --write",
-    "dev": "tsx --env-file .env src/server.ts",
-    "dev:watch": "tsx watch --env-file .env src/server.ts"
+    "lint": "pnpm exec biome check ./src --write",
+    "lint:unsafe": "pnpm exec biome check ./src --write --unsafe",
+    "dev": "tsx watch --env-file .env src/infra/http/server.ts",
+    "test": "dotenv -e .env.test -- vitest run",
+    "test:watch": "dotenv -e .env.test -- vitest"
   },
   "keywords": [
     "ftr",
@@ -24,10 +26,13 @@
   "devDependencies": {
     "@biomejs/biome": "^2.2.4",
     "@types/node": "^24.3.1",
-    "drizzle-kit": "^0.31.4",
+    "@types/pg": "^8.15.5",
+    "dotenv-cli": "^10.0.0",
     "tsup": "^8.5.0",
     "tsx": "^4.20.5",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.2.4"
   },
   "dependencies": {
     "@fastify/cors": "^11.1.0",
@@ -35,14 +40,15 @@
     "@fastify/swagger": "^9.5.1",
     "@fastify/swagger-ui": "^5.2.3",
     "dotenv": "^17.2.2",
+    "drizzle-kit": "^0.31.4",
     "drizzle-orm": "^0.44.5",
     "fastify": "^5.6.0",
     "fastify-type-provider-zod": "^6.0.0",
+    "pg": "^8.16.3",
     "postgres": "^3.4.7",
+    "uuidv7": "^1.0.2",
     "vite": "^7.1.5",
     "zod": "^4.1.8"
   }
 }
-
-
 
