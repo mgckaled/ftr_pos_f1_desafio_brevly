@@ -43,6 +43,15 @@ export const createLinkRoute: FastifyPluginAsyncZod = async server => {
 							value: z.string(),
 						})
 						.describe("Value already exists"),
+					422: z
+						.object({
+							statusCode: z.number(),
+							name: z.string(),
+							message: z.string(),
+							field: z.string(),
+							value: z.string(),
+						})
+						.describe("Validation failed"),
 					500: z.object({ message: z.string() }).describe("Internal server error"),
 				},
 			},
@@ -69,6 +78,8 @@ export const createLinkRoute: FastifyPluginAsyncZod = async server => {
 			switch (name) {
 				case "AlreadyExistsError":
 					return reply.status(409).send({ statusCode, name, message, field, value })
+				case "InvalidShortLinkError":
+					return reply.status(422).send({ statusCode, name, message, field, value })
 				default:
 					throw new Error()
 			}

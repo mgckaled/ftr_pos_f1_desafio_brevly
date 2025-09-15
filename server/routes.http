@@ -4,15 +4,15 @@ POST {{baseUrl}}/links
 Content-Type: application/json
 
 {
-  "originalLink": "https://www.docker.com/",
-  "shortLink": "docker"
+  "originalLink": "https://www.google.com/",
+  "shortLink": "google"
 }
 
-HTTP/1.1 201  - Created
+HTTP/1.1 409  - Conflict
 access-control-allow-origin: *
 content-type: application/json; charset=utf-8
-content-length: 199
-date: Mon, 15 Sep 2025 21:12:22 GMT
+content-length: 144
+date: Mon, 15 Sep 2025 23:36:48 GMT
 connection: close
 ###
 GET {{baseUrl}}/links
@@ -21,16 +21,14 @@ HTTP/1.1 200  - OK
 access-control-allow-origin: *
 content-type: application/json; charset=utf-8
 content-length: 494
-date: Mon, 15 Sep 2025 21:12:24 GMT
+date: Mon, 15 Sep 2025 23:36:56 GMT
 connection: close
 ###
-@id = 01994e97-b97b-76a0-9062-6188d5c9ea78
+@id = 01994f2c-d6b5-79eb-914e-c536d3e7dd07
 
 DELETE {{baseUrl}}/links/{{id}}
 
-HTTP/1.1 404  - Not Found
+HTTP/1.1 204  - No Content
 access-control-allow-origin: *
-content-type: application/json; charset=utf-8
-content-length: 192
-date: Mon, 15 Sep 2025 21:12:30 GMT
+date: Mon, 15 Sep 2025 23:35:19 GMT
 connection: close
