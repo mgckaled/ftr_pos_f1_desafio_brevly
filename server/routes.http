@@ -1,0 +1,16 @@
+@baseUrl = http://localhost:3333
+###
+POST {{baseUrl}}/links
+Content-Type: application/json
+
+{
+  "originalLink": "https://rocketseat.com.br",
+  "shortLink": "brev.ly/rocketseat"
+}
+
+HTTP/1.1 201  - Created
+access-control-allow-origin: *
+content-type: application/json; charset=utf-8
+content-length: 185
+date: Mon, 15 Sep 2025 13:39:00 GMT
+connection: close

@@ -9,6 +9,7 @@ import {
 	serializerCompiler,
 	validatorCompiler,
 } from "fastify-type-provider-zod"
+import * as routes from "./routes/index.ts"
 import { transformSwaggerSchema } from "./transform-swagger-schema.ts"
 
 const server = fastify()
@@ -64,7 +65,7 @@ server.register(fastifyApiReference as any, {
 	},
 })
 
-// server.register(Route)
+server.register(routes.createLinkRoute)
 
 server.listen({ port: 3333, host: "0.0.0.0" }).then(() => {
 	console.log("HTTP server running on http://localhost:3333 🚀")
