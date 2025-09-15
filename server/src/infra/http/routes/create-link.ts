@@ -13,7 +13,13 @@ export const createLinkRoute: FastifyPluginAsyncZod = async server => {
 				tags: ["Links"],
 				body: z.object({
 					originalLink: z.url().describe("The original URL to shorten"),
-					shortLink: z.string().trim().min(5).max(50).describe("The desired short link"),
+					shortLink: z
+						.string()
+						.trim()
+						.regex(/^[A-Za-z0-9]{1,15}$/, {
+							message: "Invalid suffix: only 1-15 alphanumeric characters",
+						})
+						.describe("Short link suffix (without 'brev.ly/')"),
 				}),
 				response: {
 					201: z
@@ -21,7 +27,8 @@ export const createLinkRoute: FastifyPluginAsyncZod = async server => {
 							link: z.object({
 								id: z.string(),
 								originalLink: z.string(),
-								shortLink: z.string(),
+								shortLink: z.string(), // sufixo salvo no DB
+								shortUrl: z.string(), // URL completa retornada pela API
 								accessCount: z.number(),
 								createdAt: z.date(),
 							}),
@@ -50,7 +57,11 @@ export const createLinkRoute: FastifyPluginAsyncZod = async server => {
 
 			if (isRight(result)) {
 				const { link } = unwrapEither(result)
-				return reply.status(201).send({ link })
+				const responseLink = {
+					...link,
+					shortUrl: `brev.ly/${link.shortLink}`,
+				}
+				return reply.status(201).send({ link: responseLink })
 			}
 
 			const { statusCode, name, message, field, value } = unwrapEither(result)

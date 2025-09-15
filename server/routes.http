@@ -4,15 +4,15 @@ POST {{baseUrl}}/links
 Content-Type: application/json
 
 {
-  "originalLink": "https://bsky.app/",
-  "shortLink": "brev.ly/bsky"
+  "originalLink": "https://www.docker.com/",
+  "shortLink": "docker"
 }
 
 HTTP/1.1 201  - Created
 access-control-allow-origin: *
 content-type: application/json; charset=utf-8
-content-length: 171
-date: Mon, 15 Sep 2025 18:16:30 GMT
+content-length: 199
+date: Mon, 15 Sep 2025 21:12:22 GMT
 connection: close
 ###
 GET {{baseUrl}}/links
@@ -20,11 +20,11 @@ GET {{baseUrl}}/links
 HTTP/1.1 200  - OK
 access-control-allow-origin: *
 content-type: application/json; charset=utf-8
-content-length: 174
-date: Mon, 15 Sep 2025 18:21:12 GMT
+content-length: 494
+date: Mon, 15 Sep 2025 21:12:24 GMT
 connection: close
 ###
-@id = 01994d99-abd2-71ea-9760-8c8f93f51d9d
+@id = 01994e97-b97b-76a0-9062-6188d5c9ea78
 
 DELETE {{baseUrl}}/links/{{id}}
 
@@ -32,5 +32,5 @@ HTTP/1.1 404  - Not Found
 access-control-allow-origin: *
 content-type: application/json; charset=utf-8
 content-length: 192
-date: Mon, 15 Sep 2025 18:21:02 GMT
+date: Mon, 15 Sep 2025 21:12:30 GMT
 connection: close

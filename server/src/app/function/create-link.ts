@@ -7,7 +7,12 @@ import { AlreadyExistsError } from "./errors/already-exists-error.ts"
 
 const zodSchema = z.object({
 	originalLink: z.url(),
-	shortLink: z.string().trim().min(5).max(30),
+	shortLink: z
+		.string()
+		.trim()
+		.regex(/^[A-Za-z0-9]{1,15}$/, {
+			message: "shortLink must contain only alphanumeric characters (1-15)",
+		}),
 })
 
 type Input = z.input<typeof zodSchema>
@@ -25,5 +30,10 @@ export async function createLink(input: Input): Promise<Either<AlreadyExistsErro
 
 	const [result] = await db.insert(schema.links).values({ originalLink, shortLink }).returning()
 
-	return makeRight({ link: result })
+	const linkWithFull = {
+		...result,
+		shortUrl: `brev.ly/${result.shortLink}`,
+	}
+
+	return makeRight({ link: linkWithFull })
 }
