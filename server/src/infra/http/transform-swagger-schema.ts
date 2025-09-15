@@ -1,5 +1,5 @@
-import type { ISwaggerBodySchema } from "@/types/swagger-schema.ts"
 import { jsonSchemaTransform } from "fastify-type-provider-zod"
+import type { ISwaggerBodySchema } from "@/types/swagger-schema.ts"
 
 type TransformSwaggerSchemaData = Parameters<typeof jsonSchemaTransform>[0]
 

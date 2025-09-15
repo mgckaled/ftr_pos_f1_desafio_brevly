@@ -5,9 +5,9 @@ import { fastifySwaggerUi } from "@fastify/swagger-ui"
 import fastifyApiReference from "@scalar/fastify-api-reference"
 import { fastify } from "fastify"
 import {
-  hasZodFastifySchemaValidationErrors,
-  serializerCompiler,
-  validatorCompiler,
+	hasZodFastifySchemaValidationErrors,
+	serializerCompiler,
+	validatorCompiler,
 } from "fastify-type-provider-zod"
 import { transformSwaggerSchema } from "./transform-swagger-schema.ts"
 
@@ -56,12 +56,12 @@ server.register(fastifySwaggerUi, {
 
 // New UI with Scalar
 server.register(fastifyApiReference as any, {
-  routePrefix: "/reference",
-  configuration: {
-	spec: { url: "/docs/json" },
-	layout: "modern",
-	theme: "dark",
-  },
+	routePrefix: "/reference",
+	configuration: {
+		spec: { url: "/docs/json" },
+		layout: "modern",
+		theme: "dark",
+	},
 })
 
 // server.register(Route)
@@ -70,5 +70,5 @@ server.listen({ port: 3333, host: "0.0.0.0" }).then(() => {
 	console.log("HTTP server running on http://localhost:3333 🚀")
 	console.log("Swagger UI running on http://localhost:3333/docs 📓")
 	console.log("Scalar Reference running on http://localhost:3333/reference 📓")
-  console.log("Swagger JSON running on http://localhost:3333/docs/json ⚡")
+	console.log("Swagger JSON running on http://localhost:3333/docs/json ⚡")
 })
