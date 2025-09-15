@@ -68,6 +68,7 @@ server.register(fastifyApiReference as any, {
 // routes
 server.register(routes.createLinkRoute)
 server.register(routes.listLinkRoute)
+server.register(routes.deleteLinkRoute)
 
 server.listen({ port: 3333, host: "0.0.0.0" }).then(() => {
 	console.log("HTTP server running on http://localhost:3333 🚀")

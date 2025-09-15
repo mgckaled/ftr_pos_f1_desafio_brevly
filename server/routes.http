@@ -4,15 +4,15 @@ POST {{baseUrl}}/links
 Content-Type: application/json
 
 {
-  "originalLink": "https://rocketseat.com.br",
-  "shortLink": "brev.ly/rocketseat"
+  "originalLink": "https://bsky.app/",
+  "shortLink": "brev.ly/bsky"
 }
 
-HTTP/1.1 409  - Conflict
+HTTP/1.1 201  - Created
 access-control-allow-origin: *
 content-type: application/json; charset=utf-8
-content-length: 168
-date: Mon, 15 Sep 2025 14:14:16 GMT
+content-length: 171
+date: Mon, 15 Sep 2025 18:16:30 GMT
 connection: close
 ###
 GET {{baseUrl}}/links
@@ -20,6 +20,17 @@ GET {{baseUrl}}/links
 HTTP/1.1 200  - OK
 access-control-allow-origin: *
 content-type: application/json; charset=utf-8
-content-length: 188
-date: Mon, 15 Sep 2025 16:01:53 GMT
+content-length: 174
+date: Mon, 15 Sep 2025 18:21:12 GMT
+connection: close
+###
+@id = 01994d99-abd2-71ea-9760-8c8f93f51d9d
+
+DELETE {{baseUrl}}/links/{{id}}
+
+HTTP/1.1 404  - Not Found
+access-control-allow-origin: *
+content-type: application/json; charset=utf-8
+content-length: 192
+date: Mon, 15 Sep 2025 18:21:02 GMT
 connection: close
