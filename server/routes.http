@@ -8,9 +8,9 @@ Content-Type: application/json
   "shortLink": "brev.ly/rocketseat"
 }
 
-HTTP/1.1 201  - Created
+HTTP/1.1 409  - Conflict
 access-control-allow-origin: *
 content-type: application/json; charset=utf-8
-content-length: 185
-date: Mon, 15 Sep 2025 13:39:00 GMT
+content-length: 168
+date: Mon, 15 Sep 2025 14:14:16 GMT
 connection: close

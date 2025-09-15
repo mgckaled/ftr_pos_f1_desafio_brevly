@@ -1,6 +1,6 @@
 import type { FastifyPluginAsyncZod } from "fastify-type-provider-zod"
 import { z } from "zod"
-import { createLink } from "../../../../app/function/create-link.ts"
+import { createLink } from "../../../app/function/create-link.ts"
 import { isRight, unwrapEither } from "../../shared/either.ts"
 
 export const createLinkRoute: FastifyPluginAsyncZod = async server => {

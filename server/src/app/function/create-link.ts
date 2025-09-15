@@ -1,8 +1,8 @@
 import { z } from "zod"
-import { db } from "../../src/infra/db/index.ts"
-import { schema } from "../../src/infra/db/schemas/index.ts"
-import { type Either, makeLeft, makeRight } from "../../src/infra/shared/either.ts"
-import { AlreadyExistsError } from "../function/errors/already-exists-error.ts"
+import { db } from "../../infra/db/index.ts"
+import { schema } from "../../infra/db/schemas/index.ts"
+import { type Either, makeLeft, makeRight } from "../../infra/shared/either.ts"
+import { AlreadyExistsError } from "./errors/already-exists-error.ts"
 
 const zodSchema = z.object({
   originalLink: z.url(),
