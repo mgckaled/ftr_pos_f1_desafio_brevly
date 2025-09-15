@@ -14,3 +14,12 @@ content-type: application/json; charset=utf-8
 content-length: 168
 date: Mon, 15 Sep 2025 14:14:16 GMT
 connection: close
+###
+GET {{baseUrl}}/links
+
+HTTP/1.1 200  - OK
+access-control-allow-origin: *
+content-type: application/json; charset=utf-8
+content-length: 188
+date: Mon, 15 Sep 2025 16:01:53 GMT
+connection: close
