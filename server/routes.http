@@ -21,7 +21,17 @@ HTTP/1.1 200  - OK
 access-control-allow-origin: *
 content-type: application/json; charset=utf-8
 content-length: 494
-date: Mon, 15 Sep 2025 23:36:56 GMT
+date: Tue, 16 Sep 2025 00:02:51 GMT
+connection: close
+###
+@shortLink = google
+GET {{baseUrl}}/links/{{shortLink}}
+
+HTTP/1.1 200  - OK
+access-control-allow-origin: *
+content-type: application/json; charset=utf-8
+content-length: 58
+date: Tue, 16 Sep 2025 00:02:46 GMT
 connection: close
 ###
 @id = 01994f2c-d6b5-79eb-914e-c536d3e7dd07
