@@ -1,4 +1,5 @@
 export * from "./create-link.ts"
 export * from "./delete-link.ts"
+export * from "./export-link.ts"
 export * from "./find-short-link.ts"
 export * from "./list-links.ts"

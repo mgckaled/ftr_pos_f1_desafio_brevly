@@ -17,3 +17,7 @@ export type ListReponseOutput = {
 		createdAt: Date
 	}[]
 }
+
+export type ExportLinkReponseOutput = {
+	reportUrl: string
+}

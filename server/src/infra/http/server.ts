@@ -70,10 +70,11 @@ server.register(routes.createLinkRoute)
 server.register(routes.listLinkRoute)
 server.register(routes.deleteLinkRoute)
 server.register(routes.findShortLinkRoute)
+server.register(routes.exportLinkRoute)
 
 server.listen({ port: 3333, host: "0.0.0.0" }).then(() => {
 	console.log("HTTP server running on http://localhost:3333 🚀")
 	console.log("Swagger UI running on http://localhost:3333/docs 📓")
-	console.log("Scalar Reference running on http://localhost:3333/reference 📓")
-	console.log("Swagger JSON running on http://localhost:3333/docs/json ⚡")
+	console.log("Scalar Reference running on http://localhost:3333/reference 📓⚡")
+	console.log("Swagger JSON running on http://localhost:3333/docs/json")
 })

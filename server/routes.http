@@ -12,7 +12,7 @@ HTTP/1.1 409  - Conflict
 access-control-allow-origin: *
 content-type: application/json; charset=utf-8
 content-length: 144
-date: Mon, 15 Sep 2025 23:36:48 GMT
+date: Fri, 19 Sep 2025 16:36:00 GMT
 connection: close
 ###
 GET {{baseUrl}}/links
@@ -21,18 +21,11 @@ HTTP/1.1 200  - OK
 access-control-allow-origin: *
 content-type: application/json; charset=utf-8
 content-length: 494
-date: Tue, 16 Sep 2025 00:02:51 GMT
+date: Fri, 19 Sep 2025 16:36:05 GMT
 connection: close
 ###
 @shortLink = google
 GET {{baseUrl}}/links/{{shortLink}}
-
-HTTP/1.1 200  - OK
-access-control-allow-origin: *
-content-type: application/json; charset=utf-8
-content-length: 58
-date: Tue, 16 Sep 2025 00:02:46 GMT
-connection: close
 ###
 @id = 01994f2c-d6b5-79eb-914e-c536d3e7dd07
 
@@ -41,4 +34,19 @@ DELETE {{baseUrl}}/links/{{id}}
 HTTP/1.1 204  - No Content
 access-control-allow-origin: *
 date: Mon, 15 Sep 2025 23:35:19 GMT
+connection: close
+###
+POST {{baseUrl}}/links/export
+Content-Type: application/json
+
+{
+  "originalLink": "https://www.google.com/",
+  "shortLink": "google"
+}
+
+HTTP/1.1 404  - Not Found
+access-control-allow-origin: *
+content-type: application/json; charset=utf-8
+content-length: 85
+date: Fri, 19 Sep 2025 16:43:48 GMT
 connection: close
