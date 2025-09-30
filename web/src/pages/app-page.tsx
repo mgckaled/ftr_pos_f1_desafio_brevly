@@ -1,4 +1,6 @@
 import logo from "../assets/logo.svg"
+import { MyLinksComponent } from "../components/my-links-component"
+import { NewLinkComponent } from "../components/new-link-component"
 
 export function AppPage() {
 	return (
@@ -6,7 +8,8 @@ export function AppPage() {
 			<img src={logo} alt="brev.ly" className="w-24 pb-8" />
 
 			<div className="flex flex-col w-full gap-8 md:flex-row">
-				<h1>Brev.ly</h1>
+				<NewLinkComponent />
+				<MyLinksComponent />
 			</div>
 		</main>
 	)
